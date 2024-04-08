@@ -11,18 +11,22 @@
 
 <body>
 
-    <section id="header">
-        <a href="#"><img src="img/logo.png" height="60" width="140" class="logo" alt="logo" /> </a>
-        <div>
-            <ul id="navbar">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#Categories">Categories</a></li>
-                <li><a href="#">Deals</a></li>
-                <li><a href="YourOrders.html">Your Orders</a></li>
-                <li><a href="SignIn.html">Sign In </a></li>
-            </ul>
-        </div>
-    </section>
+  <section id="header">
+    <a href="#"><img src="img/logo.png" height="60" width="140" class="logo" alt="logo" /> </a>
+    <div class="menu-toggle">
+        <i class="fas fa-bars"></i>
+    </div>
+    <div class="navbar-wrapper">
+      <ul id="navbar">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#Categories">Categories</a></li>
+        <li><a href="#">Deals</a></li>
+        <li><a href="YourOrders.html">Your Orders</a></li>
+        <li><a href="SignIn.html">Sign In </a></li>
+    </ul>
+    </div>
+</section>
+
 
     <section id="sm-banner" class="section-p1">
         <div class="banner-box">
@@ -937,7 +941,14 @@
         
        </footer>
     
-    
+       <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuToggle = document.querySelector(".menu-toggle");
+            menuToggle.addEventListener("click", function () {
+                this.classList.toggle("active");
+            });
+        });
+      </script>
 </body>
 
 </html>
