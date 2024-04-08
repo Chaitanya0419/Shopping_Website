@@ -117,12 +117,15 @@ body {
   bottom: -4px;
   left: 1px;
 }
-
+.menu-toggle {
+  display: none; /* Hide menu toggle by default */
+}
 /* Add media query for smaller screens */
 @media screen and (max-width: 768px) {
   #header {
     flex-direction: column;
     padding: 20px;
+    margin-right: none;
   }
 
   #navbar {
@@ -141,6 +144,46 @@ body {
   #navbar li a:hover,
   #navbar li a.active {
     font-size: 20px;
+  }
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+  .menu-toggle {
+      display: block; /* Display menu toggle on smaller screens */
+      cursor: pointer;
+  }
+
+  .navbar-wrapper {
+      display: none; /* Hide navbar by default on smaller screens */
+  }
+
+  /* Show navbar when menu toggle is clicked */
+  .menu-toggle.active + .navbar-wrapper {
+      display: block;
+  }
+
+  #header {
+      flex-direction: column;
+      padding: 20px;
+  }
+
+  #navbar {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  #navbar li {
+      padding: 10px 0;
+  }
+
+  #navbar li a {
+      font-size: 18px;
+  }
+
+  #navbar li a:hover,
+  #navbar li a.active {
+      font-size: 20px;
   }
 }
 
